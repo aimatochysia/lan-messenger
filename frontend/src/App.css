@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-mode {
+  background: linear-gradient(145deg, #232526, #414345);
+  color: white;
+}
+
+.light-mode {
+  background: linear-gradient(145deg, #f5f7fa, #c3cfe2);
+  color: #333;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.join-container, .message-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.join-btn, .send-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.join-btn:hover, .send-btn:hover {
+  background-color: #45a049;
+}
+
+.user-list, .message-list {
+  list-style: none;
+  padding: 0;
+}
+
+.message-item {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+}
