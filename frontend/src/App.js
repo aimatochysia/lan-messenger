@@ -46,45 +46,48 @@ function App() {
                     Toggle {darkMode ? "Light" : "Dark"} Mode
                 </button>
             </div>
-            <div className="content">
-                {!username ? (
-                    <div className="join-container">
-                        <input
-                            type="text"
-                            placeholder="Enter your name"
-                            value={inputName}
-                            onChange={(e) => setInputName(e.target.value)}
-                        />
-                        <button className="join-btn" onClick={joinChat}>Submit</button>
-                    </div>
-                ) : (
-                    <div>
-                        <h3>Users Online:</h3>
-                        <ul className="user-list">
-                            {users.map((user, index) => (
-                                <li key={index}>{user}</li>
-                            ))}
-                        </ul>
-                        <div className="message-box">
+            <div className="chat-layout">
+                <div className="sidebar">
+                    <h3>Users Online:</h3>
+                    <ul className="user-list">
+                        {users.map((user, index) => (
+                            <li key={index}>{user}</li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="chat-container">
+                    {!username ? (
+                        <div className="join-container">
                             <input
                                 type="text"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
+                                placeholder="Enter your name"
+                                value={inputName}
+                                onChange={(e) => setInputName(e.target.value)}
                             />
-                            <button className="send-btn" onClick={sendMessage}>Send</button>
+                            <button className="join-btn" onClick={joinChat}>Submit</button>
                         </div>
-                        <div className="messages-container">
-                            <h3>Messages:</h3>
-                            <ul className="message-list">
-                                {messages.map((msg, index) => (
-                                    <li key={index} className="message-item">
-                                        <strong>{msg.user}:</strong> {msg.text}
-                                    </li>
-                                ))}
-                            </ul>
+                    ) : (
+                        <div className="chat-section">
+                            <div className="messages-container">
+                                <ul className="message-list">
+                                    {messages.map((msg, index) => (
+                                        <li key={index} className="message-item">
+                                            <strong>{msg.user}:</strong> {msg.text}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="message-box">
+                                <input
+                                    type="text"
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                />
+                                <button className="send-btn" onClick={sendMessage}>Send</button>
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
         </div>
     );
